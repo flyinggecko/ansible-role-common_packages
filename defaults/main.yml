@@ -1,0 +1,22 @@
+---
+# defaults file for common_packages
+package_state: "{{ item.state | default('latest') }}"
+package_purge: "{{ item.purge | default('yes') }}"
+package_release: "{{ item.release | default(ansible_distribution_release) }}"
+
+# empty arrays for generic packages
+common_packages_all: []
+common_packages_group: []
+common_packages_host: []
+# empty arrays for apt only packages
+common_packages_apt_all: []
+common_packages_apt_group: []
+common_packages_apt_host: []
+# empty arrays for yum only packages
+common_packages_yum_all: []
+common_packages_yum_group: []
+common_packages_yum_host: []
+# empty arrays for pacman only packages
+common_packages_pacman_all: []
+common_packages_pacman_group: []
+common_packages_pacman_host: []

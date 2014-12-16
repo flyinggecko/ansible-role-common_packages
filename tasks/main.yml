@@ -1,0 +1,17 @@
+---
+# tasks file for common_packages
+
+- name: install common packages (apt)
+  include: apt_install.yml
+  when:
+    ansible_pkg_mgr == "apt"
+
+- name: install common packages (yum)
+  include: yum_install.yml
+  when:
+    ansible_pkg_mgr == "yum"
+
+- name: install common packages (pacman)
+  include: pacman_install.yml
+  when:
+    ansible_pkg_mgr == "pacman"

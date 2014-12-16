@@ -1,0 +1,15 @@
+---
+
+# install tasks for yum based hosts
+
+- name: install common packages (yum)
+  yum:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ package_state }}"
+  with_flattened:
+    - common_packages_all
+    - common_packages_yum_all
+    - common_packages_group
+    - common_packages_yum_group
+    - common_packages_host
+    - common_packages_yum_host

@@ -1,0 +1,18 @@
+---
+
+# install tasks for apt based hosts
+
+- name: install common packages (apt)
+  apt:
+    name: "{{ item.name | default(item) }}"
+    install_recommends: "no"
+    state: "{{ package_state }}"
+    purge: "{{ package_purge }}"
+    default_release: "{{ package_release }}"
+  with_flattened:
+    - common_packages_all
+    - common_packages_apt_all
+    - common_packages_group
+    - common_packages_apt_group
+    - common_packages_host
+    - common_packages_apt_host

@@ -1,0 +1,15 @@
+---
+
+# install tasks for pacman based hosts
+
+- name: install common packages (pacman)
+  pacman:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ package_state }}"
+  with_flattened:
+    - common_packages_all
+    - common_packages_pacman_all
+    - common_packages_group
+    - common_packages_pacman_group
+    - common_packages_host
+    - common_packages_pacman_host
