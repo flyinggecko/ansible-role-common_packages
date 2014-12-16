@@ -12,11 +12,17 @@ Role Variables
 --------------
 
 `package_state`: used to determine the package state
+
 `package_purge`: used to determine if the package will be purged (apt-only)
+
 `package_release`: used to determine the used release (apt-only)
+
 `common_packages_{host,group,all}`: Array of packages, that have the same name, whether apt/yum or pacman
+
 `common_packages_apt_{host,group,all}`: Array of packages only installed on apt-based hosts
+
 `common_packages_yum_{host,group,all}`: Array of packages only installed on yum-based hosts
+
 `common_packages_pacman_{host,group,all}`: Array of packages only installed on pacman-based hosts
 
     common_packages_all:
