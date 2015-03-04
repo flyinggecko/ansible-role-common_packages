@@ -2,6 +2,9 @@
 
 # install tasks for apt based hosts
 
+- name: update package lists
+  command: "aptitude update"
+
 - name: install common packages (apt)
   apt:
     name: "{{ item.name | default(item) }}"
