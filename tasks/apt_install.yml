@@ -5,7 +5,7 @@
 - name: install common packages (apt)
   apt:
     name: "{{ item.name | default(item) }}"
-    install_recommends: "no"
+    install_recommends: "{{ package_recommends }}"
     state: "{{ package_state }}"
     purge: "{{ package_purge }}"
     default_release: "{{ package_release }}"
