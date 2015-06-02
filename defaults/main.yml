@@ -3,7 +3,7 @@
 package_state: "{{ item.state | default('latest') }}"
 package_recommends: "{{ item.with_recommends | default('no') }}"
 package_purge: "{{ item.purge | default('yes') }}"
-package_release: "{{ item.release | default(ansible_distribution_release) }}"
+package_release: "{{ item.release | default(ansible_lsb.release) }}"
 
 # empty arrays for generic packages
 common_packages_all: []
