@@ -5,6 +5,7 @@
 - name: update package lists
   command: "aptitude update"
   changed_when: False
+  ignore_errors: yes
 
 - name: install common packages (apt)
   apt:

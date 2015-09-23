@@ -21,3 +21,8 @@ common_packages_yum_host: []
 common_packages_pacman_all: []
 common_packages_pacman_group: []
 common_packages_pacman_host: []
+# empty arrays for pip only packages
+common_packages_pip_all: []
+common_packages_pip_group: []
+common_packages_pip_host: []
+

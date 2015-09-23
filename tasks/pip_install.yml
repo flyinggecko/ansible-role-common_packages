@@ -1,0 +1,10 @@
+---
+
+- name: install common packages (pip)
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ package_state }}"
+  with_flattened:
+  - common_packages_pip_all
+  - common_packages_pip_group
+  - common_packages_pip_host
