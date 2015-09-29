@@ -1,6 +1,11 @@
 ---
 # tasks file for common_packages
 
+#- name: install common packages
+#  include: "{{ ansible_pkg_mgr }}_install.yml"
+#  when_exist:
+#    "{{ ansible_pkg_mgr }}_install.yml"
+
 - name: install common packages (apt)
   include: apt_install.yml
   when:
@@ -15,3 +20,6 @@
   include: pacman_install.yml
   when:
     ansible_pkg_mgr == "pacman"
+    
+- name: install common packages (pip)
+  include: pip_install.yml
